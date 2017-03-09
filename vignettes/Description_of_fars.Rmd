@@ -1,0 +1,51 @@
+---
+title: "Description of fars - Package"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This package is a Peer-graded Assignment: Building an R Package.
+
+This package provides utility functions to view and plot data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System. For more details visit: http://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS)
+
+In the following, all functions contained are described. 
+
+
+###Reading Data
+The `make_filename` provides an easy way to create the filename required. Example:
+```
+fars_filename <- make_filename(2013)
+```
+
+Afterward you can use the `fars_read` to read the data. Example
+```
+fars <- fars_read_years(years = 2015)
+```
+This function convert .csv.bz2 in tbl_df object. 
+
+
+###Manipulating Data
+fars_read_years  is a simple function that filter data in function of the years.
+
+`fars_read_years`:
+```
+fars2015 <- fars_read_years(years = 2015)
+```
+
+You can Manipulating Data using `fars_summarize_years` This function create a summary table with counts of a number of records for each month in specified years.
+
+```
+farssummary <- fars_summarize_years(2013:2015)
+```
+###Ploting  Data
+Finally, You can plot your map of the count of accidents in a specific state in a specific year using `fars_map_state`.
+
+```
+library(mapdata)
+fars_map_state(10, 2013)
+```
+```

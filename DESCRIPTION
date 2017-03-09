@@ -1,0 +1,17 @@
+
+Package: fars
+Type: Package
+Title: Fatality Analysis Reporting System
+Date: 2017-03-09
+Version: 0.1.0
+Depends: R (>= 3.3.1)
+Author: V Seykov <venseikov@yahoo.com>
+Imports: dplyr, maps, readr, tidyr, magrittr
+Maintainer: V Seykov <venseikov@yahoo.com>
+Description: A software that helps to calculate statistics of fatal accident in each state.
+License: GPL (>= 2)
+LazyData: TRUE
+RoxygenNote: 5.0.1
+URL: https://github.com/Nextfx/fars
+Suggests: knitr, testthat, rmarkdown
+VignetteBuilder: knitr
